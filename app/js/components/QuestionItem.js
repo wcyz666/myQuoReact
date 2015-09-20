@@ -2,6 +2,8 @@
  * Created by ASUA on 2015/9/19.
  */
 var React = require('react');
+var QuestionComment = require("../components/QuestionComment.js");
+
 
 module.exports = React.createClass({
     updateVote: function(event) {
@@ -26,6 +28,8 @@ module.exports = React.createClass({
                 <div className="media-body">
                     <h4 className="media-heading">{this.props.questionInfo.title}</h4>
                     <p>{this.props.questionInfo.discription}</p>
+                        <a className="mark" href="#">comments</a>
+                        <QuestionComment />
                 </div>
             </div>
         );
