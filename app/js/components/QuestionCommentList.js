@@ -6,13 +6,18 @@ var QuestionCommentItem = require('./QuestionCommentItem.js');
 
 module.exports = React.createClass({
     ulStyle: {
-        "margin-top": 10,
-        "margin-bottom": 0
+        "marginTop": 10,
+        "marginBottom": 0
     },
     render: function () {
+        var comments = this.props.comments.map(function(element){
+            return (
+                <QuestionCommentItem content={element}/>
+            );
+        });
         return (
             <ul style={this.ulStyle} className="list-group">
-                <QuestionCommentItem />
+                {comments}
             </ul>
         );
     }

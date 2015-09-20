@@ -11,10 +11,13 @@ module.exports = React.createClass({
         "margin-bottom": 0
     },
     render: function () {
+        var style = {
+            display: this.props.isCommentDisplayed ? "block":"none"
+        };
         return (
-            <div>
-                <QuestionCommentList />
-                <QuestionCommentForm />
+            <div style={style}>
+                <QuestionCommentList comments={this.props.comments}/>
+                <QuestionCommentForm onCommitSubmit={this.props.onCommitSubmit}/>
             </div>
         );
     }

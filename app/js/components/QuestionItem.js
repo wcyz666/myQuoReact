@@ -6,12 +6,31 @@ var QuestionComment = require("../components/QuestionComment.js");
 
 
 module.exports = React.createClass({
+    getInitialState: function() {
+        return {
+            isCommentDisplayed: false,
+            comments: [
+            ]
+        };
+    },
+    toggleComment: function(event) {
+        event.preventDefault();
+        this.setState({
+            isCommentDisplayed: !this.state.isCommentDisplayed
+        });
+    },
     updateVote: function(event) {
         var target = event.nativeEvent.target;
         if (target.id == "upVote" || target.parentElement.id == "upVote")
             this.props.updateVote(this.props.myKey, true);
         else if (target.id == "downVote" || target.parentElement.id == "downVote")
             this.props.updateVote(this.props.myKey, false);
+    },
+    onCommitSubmit: function (newComment) {
+        this.state.comments.push(newComment);
+        this.setState({
+            comments: this.state.comments
+        });
     },
     render: function() {
         return (
@@ -28,8 +47,8 @@ module.exports = React.createClass({
                 <div className="media-body">
                     <h4 className="media-heading">{this.props.questionInfo.title}</h4>
                     <p>{this.props.questionInfo.discription}</p>
-                        <a className="mark" href="#">comments</a>
-                        <QuestionComment />
+                        <a className="mark" href="#" onClick={this.toggleComment}>comments</a>
+                        <QuestionComment comments={this.state.comments} isCommentDisplayed={this.state.isCommentDisplayed} onCommitSubmit={this.onCommitSubmit}/>
                 </div>
             </div>
         );

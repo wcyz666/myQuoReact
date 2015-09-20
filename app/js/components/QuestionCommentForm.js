@@ -4,13 +4,21 @@
 var React = require('react');
 
 module.exports = React.createClass({
+    onCommitSubmit: function (event) {
+        event.preventDefault();
+        var comment = this.refs.comment.getDOMNode().value;
+        console.log(comment);
+        this.refs.comment.getDOMNode().value = "";
+
+        this.props.onCommitSubmit(comment);
+    },
     render: function () {
         return (
-            <form method="POST">
+            <form onSubmit={this.onCommitSubmit} method="POST">
                 <div className="input-group">
-                    <input type="text" className="form-control" placeholder="Comment..." />
+                    <input ref="comment" type="text" className="form-control" placeholder="Comment..." />
                         <span className="input-group-btn">
-                            <button className="btn btn-default" type="button">Comment</button>
+                            <input value="submit" className="btn btn-default" type="submit" />
                         </span>
                  </div>
             </form>
