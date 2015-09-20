@@ -6,7 +6,7 @@ var React = require('react');
 module.exports = React.createClass({
     render: function() {
         return (
-            <button id="add-question-btn" className="btn btn-success">Add a question</button>
+            <button onClick={this.props.toggleForm} id="add-question-btn" className="btn btn-success">Add a question</button>
         );
     }
 });
