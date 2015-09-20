@@ -1,3 +1,3 @@
 # QuaReact
 
-![image](https://raw.githubusercontent.com/wcyz666/myQuaReact/efd8608a78ab9df2573d86a2f60462e2a43589f7/snapshot/QuaReact.png)
+![image](https://raw.githubusercontent.com/wcyz666/myQuaReact/1303ddba8cfd64a1b0e39c4d906073a5d4c7f6a6/snapshot/QuaReact.png)
