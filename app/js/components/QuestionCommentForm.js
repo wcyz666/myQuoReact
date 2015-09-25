@@ -7,7 +7,6 @@ module.exports = React.createClass({
     onCommitSubmit: function (event) {
         event.preventDefault();
         var comment = this.refs.comment.getDOMNode().value;
-        console.log(comment);
         this.refs.comment.getDOMNode().value = "";
 
         this.props.onCommitSubmit(comment);

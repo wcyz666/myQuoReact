@@ -10,6 +10,10 @@ module.exports = React.createClass({
         "margin-top": 10,
         "margin-bottom": 0
     },
+    shouldComponentUpdate: function(){
+        console.log("Update comment");
+        return true;
+    },
     render: function () {
         var style = {
             display: this.props.isCommentDisplayed ? "block":"none"

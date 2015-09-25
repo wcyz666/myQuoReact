@@ -3,7 +3,7 @@
  */
 var React = require('react');
 var QuestionComment = require("../components/QuestionComment.js");
-
+var QuestionTagList = require("./QuestionTagList.js");
 
 module.exports = React.createClass({
     getInitialState: function() {
@@ -45,7 +45,10 @@ module.exports = React.createClass({
                     </button>
                 </div>
                 <div className="media-body">
-                    <h4 className="media-heading">{this.props.questionInfo.title}</h4>
+                    <h4 className="media-heading">
+                        <span>{this.props.questionInfo.title}</span>
+                        <QuestionTagList tags={this.props.questionInfo.tags} isTagCloseable={false}/>
+                    </h4>
                     <p>{this.props.questionInfo.discription}</p>
                         <a className="mark" href="#" onClick={this.toggleComment}>comments</a>
                         <QuestionComment comments={this.state.comments} isCommentDisplayed={this.state.isCommentDisplayed} onCommitSubmit={this.onCommitSubmit}/>

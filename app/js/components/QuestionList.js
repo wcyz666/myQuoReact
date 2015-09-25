@@ -12,7 +12,7 @@ module.exports = React.createClass({
         if (!Array.isArray(this.props.questions)) throw new Error("Must provide an array");
         var questionItems = this.props.questions.map(function(question) {
             return (
-                <QuestionItem myKey={question.key} updateVote={self.props.updateVote} questionInfo={question} />
+                <QuestionItem key={question.key} myKey={question.key} updateVote={self.props.updateVote} questionInfo={question} />
             )
         });
         return (

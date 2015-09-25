@@ -4,9 +4,13 @@
 var React = require('react');
 
 module.exports = React.createClass({
+    shouldComponentUpdate: function(){
+        console.log("Update Item");
+        return true;
+    },
     render: function () {
         return (
-            <li className="list-group-item">{this.props.content}</li>
+            <li className="list-group-item">{this.props.children}</li>
         );
     }
 });

@@ -13,16 +13,22 @@ module.exports = React.createClass({
         var questions = [
             {
                 key: 0,
-                title: "React",
-                discription: "React abstracts away the DOM from you, giving a simpler programming model and better performance. React can also render on the server using Node, and it can power native apps using React Native.",
-                voteCount: 22
+                title: "C++: Is there a simple way of 'mapping' the hex colour `0xff2a2620` to a more readable string 'lovelyBrown'?",
+                discription: "I'm using the Juce Framework that has a setColour method like so: g.setColour (Colour (0xff2a2620)).I instead would like to write something like more readable like: g.setColour (Colour (lovelyBrown));, 'mapping' 0xff2a2620 to 'lovelyBrown'.",
+                voteCount: 22,
+                tags: [
+                    "C++",
+                    "hex"
+                ]
             },
             {
                 key: 1,
                 title: "Build Composable Components",
                 discription: "React is all about building reusable components. In fact, with React the only thing you do is build components." +
                 " Since they're so encapsulated, components make code reuse, testing, and separation of concerns easy.",
-                voteCount: 122
+                voteCount: 122,
+                tags: [
+                ]
             }
         ];
 
@@ -80,7 +86,7 @@ module.exports = React.createClass({
                 </div>
                 <div className="main container">
                         <QuestionAddForm ifShow={this.state.ifShow} updateQuestionList={this.updateQuestionList} hideForm={this.hideForm} ref="questionForm"/>
-                        <QuestionList updateVote={this.updateVote} questions={this.state.questions} />
+                        <QuestionList updateVote={this.updateVote} questions={this.state.questions}/>
                     </div>
             </div>
         );

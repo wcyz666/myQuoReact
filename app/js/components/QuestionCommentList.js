@@ -10,9 +10,9 @@ module.exports = React.createClass({
         "marginBottom": 0
     },
     render: function () {
-        var comments = this.props.comments.map(function(element){
+        var comments = this.props.comments.map(function(element, index){
             return (
-                <QuestionCommentItem content={element}/>
+                <QuestionCommentItem key={index}>{element}</QuestionCommentItem>
             );
         });
         return (
